@@ -1,4 +1,4 @@
-onfetch = event => {
+self.addEventListener('fetch', event => {
   var params = self.location.href.split("?")[1].split("&");
   var cors, match, url, custom, redirect, cred = "omit";
   params.forEach(param => {
@@ -39,4 +39,4 @@ onfetch = event => {
         return Response.redirect(redirect);
     }));
   }
-}
+});
